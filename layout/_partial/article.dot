@@ -1,42 +1,42 @@
 <article class="{{! item.layout }}">
-  {{ if (item.photos){ }}
-    {{#def.load(('post/gallery')) }}
-  {{ } }}
+  {{? item.photos }}
+    {{#def.load('_partial/post/gallery'); }}
+  {{?}}
   <div class="post-content">
     <header>
-      {{ if (item.layout != 'page'){ }}
+      {{? item.layout != 'page' }}
         <div class="icon"></div>
-        <time datetime="{{! item.date.toDate().toISOString() }}"><a href="{{= config.root }}{{= item.path }}">{{! item.date.format(config.date_format) }}</a></time>
-      {{ } }}
-      {{#def.load(('post/title')) }}
+        <time datetime="{{! item.date.toDate().toISOString() }}"><a href="{{= it.config.root }}{{= item.path }}">{{! item.date.format(it.config.date_format) }}</a></time>
+      {{?}}
+      {{#def.load('_partial/post/title') }}
     </header>
     <div class="entry">
-      {{ if (item.excerpt && index){ }}
+      {{? item.excerpt && index }}
         {{= item.excerpt }}
-      {{ } else { }}
+      {{??}}
         {{= item.content }}
-      {{ } }}
+      {{?}}
     </div>
     <footer>
-      {{ if (index){ }}
-        {{ if (item.excerpt){ }}
+      {{? index }}
+        {{? item.excerpt }}
           <div class="alignleft">
-            <a href="{{= config.root }}{{= item.path }}#more" class="more-link">{{! theme.excerpt_link }}</a>
+            <a href="{{= it.config.root }}{{= item.path }}#more" class="more-link">{{! theme.excerpt_link }}</a>
           </div>
-        {{ } }}
-        {{ if (item.comment && config.disqus_shortname){ }}
+        {{?}}
+        {{? item.comment && it.config.disqus_shortname }}
         <div class="alignright">
           <a href="{{= item.permalink }}#disqus_thread" class="comment-link">Comments</a>
         </div>
-        {{ } }}
-      {{ } else { }}
-        {{#def.load(('post/category')) }}
-        {{#def.load(('post/tag')) }}
-        {{#def.load(('post/share')) }}
-      {{ } }}
+        {{?}}
+      {{??}}
+        {{#def.load('_partial/post/category') }}
+        {{#def.load('_partial/post/tag') }}
+        {{#def.load('_partial/post/share') }}
+      {{?}}
       <div class="clearfix"></div>
     </footer>
   </div>
 </article>
 
-{{#def.load(('comment')) }}
+{{#def.load('_partial/comment') }}

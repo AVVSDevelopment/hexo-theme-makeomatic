@@ -1,13 +1,13 @@
-{{#def.load(('_partial/head')) }}
+{{#def.load('_partial/head') }}
 
 <body>
-<header id="header" class="inner">{{#def.load(('_partial/header')) }}</header>
+<header id="header" class="inner">{{#def.load('_partial/header') }}</header>
 <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">{{= body }}</div></div>
-    <aside id="sidebar" class="alignright">{{#def.load(('_partial/sidebar')) }}</aside>
+    <div id="main-col" class="alignleft"><div id="wrapper">{{= it.body }}</div></div>
+    <aside id="sidebar" class="alignright">{{#def.load('_partial/sidebar') }}</aside>
     <div class="clearfix"></div>
 </div>
-<footer id="footer" class="inner">{{#def.load(('_partial/footer')) }}</footer>
-{{#def.load(('_partial/after_footer')) }}
+<footer id="footer" class="inner">{{#def.load('_partial/footer') }}</footer>
+{{#def.load('_partial/after_footer') }}
 </body>
 </html>

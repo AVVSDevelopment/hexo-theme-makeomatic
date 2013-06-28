@@ -1,5 +1,7 @@
-{{ page.posts.each(function(item){ }}
-  {{#def.load(('_partial/article', {item: item, index: true})) }}
+{{ it.page.posts.each(function(item){
+   var index = true;
+}}
+    {{#def.load('_partial/article'); }}
 {{ }); }}
 
-{{#def.load(('_partial/pagination')) }}
+{{#def.load('_partial/pagination'); }}

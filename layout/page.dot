@@ -1,1 +1,5 @@
-{{#def.load(('_partial/article', {item: page, index: false})) }}
+{{
+    var item = it.page,
+        index = false;
+}}
+{{#def.load('_partial/article') }}

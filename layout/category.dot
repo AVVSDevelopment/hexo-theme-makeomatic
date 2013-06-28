@@ -1,1 +1,4 @@
-{{#def.load(('_partial/archive', {pagination: config.category})) }}
+{{
+   var pagination = it.config.category;
+}}
+{{#def.load('_partial/archive') }}

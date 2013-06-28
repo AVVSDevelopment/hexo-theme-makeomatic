@@ -1,40 +1,50 @@
 {{
-var title = '';
-if (page.category) title = page.category;
-if (page.tag) title = page.tag;
-if (page.archive){
-  if (page.year) title = page.year + (page.month ? '/' + page.month : '');
-  else title = __('archive_a');
-}
-}}
-<h2 class="archive-title{{ if (page.tag){ }} tag{{ } else if (page.category){ }} category{{ } }}">{{! title }}</h2>
+    var title = '';
+    if (it.page.category) title = it.page.category;
+    if (it.page.tag) title = it.page.tag;
+    if (it.page.archive){
+      if (it.page.year) title = it.page.year + (it.page.month ? '/' + it.page.month : '');
+      else title = it.__('archive_a');
+    }
 
-{{ if (pagination == 2){ }}
-  {{ page.posts.each(function(item){ }}
-    {{#def.load(1) }}
+    var categoryClass = '';
+    if ( it.page.tag ){
+        categoryClass= "tag";
+    } else if ( it.page.category ) {
+        categoryClass = "category";
+    }
+}}
+<h2 class="archive-title {{= categoryClass}}">{{! title }}</h2>
+
+{{? it.pagination == 2 }}
+
+  {{ it.page.posts.each(function(item){ }}
+    {{ var index = true; }}
+    {{#def.load('_partial/article'); }}
   {{ }); }}
 
-  {{#def.load(1) }}
-{{ } else { }}
+  {{#def.load('_partial/pagination'); }}
+
+{{??}}
   <div class="archive">
-    {{ page.each(function(item){ }}
+    {{~ it.page: item }}
       <article class="{{! item.layout }}">
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="{{! item.date.toDate().toISOString() }}"><a href="{{= config.root }}{{= item.path }}">{{! item.date.format(config.date_format) }}</a></time>
-            {{ if (item.link){ }}
-              {{ if (item.title){ }}
+            <time datetime="{{! item.date.toDate().toISOString() }}"><a href="{{= it.config.root }}{{= item.path }}">{{! item.date.format(it.config.date_format) }}</a></time>
+            {{? item.link }}
+              {{? item.title }}
                 <h1 class="title link"><a href="{{= item.link }}" target="_blank">{{! item.title }}</a></h1>
-              {{ } else { }}
+              {{??}}
                 <h1 class="title link"><a href="{{= item.link }}" target="_blank">{{! item.link }}</a></h1>
-              {{ } }}
-            {{ } else { }}
-              <h1 class="title"><a href="{{= config.root }}{{= item.path }}">{{! item.title }}</a></h1>
-            {{ } }}
+              {{?}}
+            {{??}}
+              <h1 class="title"><a href="{{= it.config.root }}{{= item.path }}">{{! item.title }}</a></h1>
+            {{?}}
           </header>
         </div>
       </article>
-    {{ }); }}
+    {{~}}
   </div>
-{{ } }}
+{{?}}

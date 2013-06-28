@@ -1,4 +1,4 @@
-<article class="<%= item.layout }}">
+<article class="{{! item.layout }}">
   {{ if (item.photos){ }}
     {{#def.load(('post/gallery')) }}
   {{ } }}
@@ -6,7 +6,7 @@
     <header>
       {{ if (item.layout != 'page'){ }}
         <div class="icon"></div>
-        <time datetime="<%= item.date.toDate().toISOString() }}"><a href="{{= config.root }}<%- item.path }}"><%= item.date.format(config.date_format) }}</a></time>
+        <time datetime="{{! item.date.toDate().toISOString() }}"><a href="{{= config.root }}{{= item.path }}">{{! item.date.format(config.date_format) }}</a></time>
       {{ } }}
       {{#def.load(('post/title')) }}
     </header>
@@ -21,7 +21,7 @@
       {{ if (index){ }}
         {{ if (item.excerpt){ }}
           <div class="alignleft">
-            <a href="{{= config.root }}<%- item.path }}#more" class="more-link"><%= theme.excerpt_link }}</a>
+            <a href="{{= config.root }}{{= item.path }}#more" class="more-link">{{! theme.excerpt_link }}</a>
           </div>
         {{ } }}
         {{ if (item.comment && config.disqus_shortname){ }}

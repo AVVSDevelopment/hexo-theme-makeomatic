@@ -1,4 +1,4 @@
-<% if (theme.twitter.username){ %>
+{{ if (theme.twitter.username){ }}
 <div class="widget twitter">
   <h3 class="title">
 		<a href="http://twitter.com/<%= theme.twitter.username %>">@<%= theme.twitter.username %></a>'s <%= __('tweets') %>
@@ -8,7 +8,7 @@
 
 <script type="text/javascript">
 var twitter_stream = ['<%= theme.twitter.username %>', <%= theme.twitter.tweet_count %>, <%= theme.twitter.show_replies %>];
-var moment_js_path = '<%- config.root %>js/moment.min.js';
+var moment_js_path = '{{= config.root }}js/moment.min.js';
 </script>
-<script src="<%- config.root %>js/twitter.js"></script>
-<% } %>
+<script src="{{= config.root }}js/twitter.js"></script>
+{{ } }}

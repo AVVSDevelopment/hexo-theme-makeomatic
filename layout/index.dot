@@ -1,0 +1,5 @@
+{{ page.posts.each(function(item){ }}
+  {{#def.load(('_partial/article', {item: item, index: true})) }}
+{{ }); }}
+
+{{#def.load(('_partial/pagination')) }}

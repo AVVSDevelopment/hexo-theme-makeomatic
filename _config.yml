@@ -2,10 +2,11 @@ menu:
   Home: /
   Archives: /archives
 
-widgets: 
+widgets:
 - search
 - category
 - tag
+
 
 excerpt_link: Read More
 

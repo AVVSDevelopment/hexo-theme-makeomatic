@@ -14,7 +14,7 @@
         categoryClass = "category";
     }
 }}
-<h2 class="archive-title {{= categoryClass}}">{{! title }}</h2>
+<h2 class="archive-title {{= categoryClass}}">{{= title }}</h2>
 
 {{? it.pagination == 2 }}
 
@@ -27,7 +27,7 @@
 
 {{??}}
   <div class="archive">
-    {{~ it.page: item }}
+    {{ it.page.posts.each(function(item){ }}
       <article class="{{! item.layout }}">
         <div class="post-content">
           <header>
@@ -45,6 +45,6 @@
           </header>
         </div>
       </article>
-    {{~}}
+    {{ }); }}
   </div>
 {{?}}

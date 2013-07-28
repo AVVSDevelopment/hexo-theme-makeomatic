@@ -13,8 +13,7 @@
     </h2>
     <p class='muted'>{{! item.subtitle }}</p>
   {{??}}
-    <h2 class="title">{{! item.title }}
-        <small>{{! item.subtitle }}</small>
-    </h2>
+    <h2 class="title">{{! item.title }}</h2>
+    <p class='muted'>{{! item.subtitle }}</p>
   {{?}}
 {{?}}

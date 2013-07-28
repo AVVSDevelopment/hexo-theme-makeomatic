@@ -28,9 +28,9 @@
     <footer class='post-footer clearfix'>
       {{? index }}
         {{? item.excerpt }}
-          <div class="pull-left">
-            <a href="{{= it.config.root }}{{= item.path }}#more" class="more-link">{{! theme.excerpt_link }}</a>
-          </div>
+        <div class="pull-left">
+            <a href="{{= it.config.root }}{{= item.path }}#more" class="more-link">{{= it.theme.excerpt_link }}</a>
+        </div>
         {{?}}
         {{? item.comment && it.config.disqus_shortname }}
         <div class="pull-right">

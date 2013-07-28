@@ -1,13 +1,29 @@
 {{#def.load('_partial/head') }}
 
-<body>
-<header id="header" class="inner">{{#def.load('_partial/header') }}</header>
-<div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">{{= it.body }}</div></div>
-    <aside id="sidebar" class="alignright">{{#def.load('_partial/sidebar') }}</aside>
-    <div class="clearfix"></div>
-</div>
-<footer id="footer" class="inner">{{#def.load('_partial/footer') }}</footer>
+<body data-spy="scroll" data-target=".navbar" data-offset="150">
+<!--[if lt IE 8]>
+<p class="chromeframe">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируйте Google Chrome Frame</a>, чтобы улучшить ваши впечатления от посещения сайта.</p>
+<![endif]-->
+
+{{#def.load('_partial/header') }}
+
+<div class="icon-up visible-desktop" id="up" title="наверх"></div>
+
+<section class="container blog" id='blog'>
+    <h1 class='outlined-caption text-center'>
+        <a href='/blog'>{{= it.config.title }}</a>
+    </h1>
+    <div class='row'>
+        <div class='span10'>{{= it.body }}</div>
+        <aside class="span2">{{#def.load('_partial/sidebar') }}</aside>
+    </div>
+</section> <!-- /container -->
+
+
+{{#def.load('_partial/footer') }}
+{{#def.load('_partial/brief') }}
 {{#def.load('_partial/after_footer') }}
+
+
 </body>
 </html>

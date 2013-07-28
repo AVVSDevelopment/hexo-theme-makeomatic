@@ -3,7 +3,10 @@
   <h3 class="title">{{= it.__('categories') }}</h3>
   <ul class="entry">
   {{ it.site.categories.sort('name').ech(function(item){ }}
-    <li><a href="{{= it.config.root }}{{= item.path }}">{{! item.name }}</a><small>{{! item.posts.length }}</small></li>
+    <li>
+        <a href="{{= it.config.root }}{{= item.path }}">{{! item.name }}</a>
+        <span class='badge pull-right'>[{{! item.posts.length }}]</span>
+    </li>
   {{ }); }}
   </ul>
 </div>

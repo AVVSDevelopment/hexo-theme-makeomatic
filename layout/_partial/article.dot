@@ -3,29 +3,37 @@
     {{#def.load('_partial/post/gallery'); }}
   {{?}}
   <div class="post-content">
-    <header>
+    <header class='post-header'>
+      {{#def.load('_partial/post/title') }}
       {{? item.layout != 'page' }}
         <div class="icon"></div>
-        <time datetime="{{! item.date.toDate().toISOString() }}"><a href="{{= it.config.root }}{{= item.path }}">{{! item.date.format(it.config.date_format) }}</a></time>
+        <time datetime="{{! item.date.toDate().toISOString() }}">
+            {{! item.date.format(it.config.date_format) }}
+        </time>
+
+        <span class='author'>
+            <img src='http://www.gravatar.com/avatar/{{= item.gravatar}}?s=20' />
+            {{= item.author }}
+        </span>
+
       {{?}}
-      {{#def.load('_partial/post/title') }}
     </header>
-    <div class="entry">
+    <section class="body">
       {{? item.excerpt && index }}
         {{= item.excerpt }}
       {{??}}
         {{= item.content }}
       {{?}}
-    </div>
-    <footer>
+    </section>
+    <footer class='post-footer clearfix'>
       {{? index }}
         {{? item.excerpt }}
-          <div class="alignleft">
+          <div class="pull-left">
             <a href="{{= it.config.root }}{{= item.path }}#more" class="more-link">{{! theme.excerpt_link }}</a>
           </div>
         {{?}}
         {{? item.comment && it.config.disqus_shortname }}
-        <div class="alignright">
+        <div class="pull-right">
           <a href="{{= item.permalink }}#disqus_thread" class="comment-link">Comments</a>
         </div>
         {{?}}
@@ -34,7 +42,6 @@
         {{#def.load('_partial/post/tag') }}
         {{#def.load('_partial/post/share') }}
       {{?}}
-      <div class="clearfix"></div>
     </footer>
   </div>
 </article>

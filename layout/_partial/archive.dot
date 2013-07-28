@@ -16,7 +16,11 @@
 }}
 <h2 class="archive-title {{= categoryClass}}">{{= title }}</h2>
 
-{{? it.pagination == 2 }}
+{{
+  console.log(it);
+}}
+
+{{? it.config.archive == 2 }}
 
   {{ it.page.posts.each(function(item){ }}
     {{ var index = true; }}
@@ -28,23 +32,7 @@
 {{??}}
   <div class="archive">
     {{ it.page.posts.each(function(item){ }}
-      <article class="{{! item.layout }}">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="{{! item.date.toDate().toISOString() }}"><a href="{{= it.config.root }}{{= item.path }}">{{! item.date.format(it.config.date_format) }}</a></time>
-            {{? item.link }}
-              {{? item.title }}
-                <h1 class="title link"><a href="{{= item.link }}" target="_blank">{{! item.title }}</a></h1>
-              {{??}}
-                <h1 class="title link"><a href="{{= item.link }}" target="_blank">{{! item.link }}</a></h1>
-              {{?}}
-            {{??}}
-              <h1 class="title"><a href="{{= it.config.root }}{{= item.path }}">{{! item.title }}</a></h1>
-            {{?}}
-          </header>
-        </div>
-      </article>
+      {{#def.load('_partial/article'); }}
     {{ }); }}
   </div>
 {{?}}

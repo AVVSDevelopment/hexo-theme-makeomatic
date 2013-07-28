@@ -3,7 +3,6 @@ menu:
   Archives: /archives
 
 widgets:
-- search
 - category
 - tag
 
@@ -16,13 +15,13 @@ twitter:
 
 addthis:
   enable: true
-  pubid:
+  pubid: false
   facebook: true
   twitter: true
   google: true
   pinterest: true
 
-fancybox: true
+fancybox: false
 
 google_analytics:
 rss:

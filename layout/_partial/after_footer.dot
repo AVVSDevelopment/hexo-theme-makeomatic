@@ -9,8 +9,6 @@
 {{?}}
 <!-- end scripts -->
 
-<script src="{{= it.config.root }}js/jquery.imagesloaded.min.js"></script>
-<script src="{{= it.config.root }}js/gallery.js"></script>
 
 {{? it.config.disqus_shortname }}
 <script type="text/javascript">
@@ -49,4 +47,3 @@ var disqus_shortname = '{{! it.config.disqus_shortname }}';
     ga('create', 'UA-40638966-1', 'makeomatic.ru');
     ga('send', 'pageview');
 </script>
-

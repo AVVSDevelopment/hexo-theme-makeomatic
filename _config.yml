@@ -15,11 +15,6 @@ twitter:
 
 addthis:
   enable: true
-  pubid: false
-  facebook: true
-  twitter: true
-  google: true
-  pinterest: true
 
 fancybox: false
 

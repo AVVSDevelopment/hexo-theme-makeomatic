@@ -1,8 +1,8 @@
 {{
     var title = '';
     if (it.page.category) title = it.page.category;
-    if (it.page.tag) title = it.page.tag;
-    if (it.page.archive){
+    else if (it.page.tag) title = it.page.tag;
+    else if (it.page.archive){
       if (it.page.year) title = it.page.year + (it.page.month ? '/' + it.page.month : '');
       else title = it.__('archive_a');
     }
@@ -15,10 +15,6 @@
     }
 }}
 <h2 class="archive-title {{= categoryClass}}">{{= title }}</h2>
-
-{{
-  console.log(it);
-}}
 
 {{? it.config.archive == 2 }}
 

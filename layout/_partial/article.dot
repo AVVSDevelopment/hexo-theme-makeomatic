@@ -34,7 +34,7 @@
         {{?}}
         {{? item.comment && it.config.disqus_shortname }}
         <div class="pull-right">
-          <a href="{{= item.permalink }}#disqus_thread" class="comment-link">Comments</a>
+          <a href="{{= item.permalink }}#disqus_thread" class="comment-link">Комментарии</a>
         </div>
         {{?}}
       {{??}}

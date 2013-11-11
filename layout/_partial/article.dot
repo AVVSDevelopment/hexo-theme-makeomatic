@@ -7,9 +7,12 @@
       {{#def.load('_partial/post/title') }}
       {{? item.layout != 'page' }}
         <div class="icon"></div>
+
         <time datetime="{{! item.date.toDate().toISOString() }}">
             {{! item.date.format(it.config.date_format) }}
         </time>
+
+        {{#def.load('_partial/post/tag') }}
 
         <span class='author'>
             <img src='http://www.gravatar.com/avatar/{{= item.gravatar}}?s=20' />
@@ -39,7 +42,6 @@
         {{?}}
       {{??}}
         {{#def.load('_partial/post/category') }}
-        {{#def.load('_partial/post/tag') }}
         {{#def.load('_partial/post/share') }}
       {{?}}
     </footer>

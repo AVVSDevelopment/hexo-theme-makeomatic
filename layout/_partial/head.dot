@@ -54,16 +54,21 @@
 
 
   {{? it.page.title }}
-  <meta property="og:type" content="blog" />
+  <meta property="og:type" content="article" />
   <meta property="og:title" content="{{! it.page.title }}" />
   {{?}}
   <meta property="og:site_name" content="{{! it.config.title }}"/>
 
+  {{? it.page.url }}
+  <meta property="og:url" content="{{! it.page.url }}" />
+  {{?}}
+
   {{? it.page.cover }}
   <meta property="og:image" content="{{! it.page.cover }}" />
-  {{??}}
-  <meta property="og:image" content="{{! it.config.cover }}"/>
+  <meta property="og:image:width" content="{{! it.page.coverWidth }}" />
+  <meta property="og:image:height" content="{{! it.page.coverHeight }}" />
   {{?}}
+
 
   <link href='http://fonts.googleapis.com/css?family=Roboto:300,700&subset=latin,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
   {{? this.env != 'production' }}
@@ -72,7 +77,6 @@
   {{??}}
   <link rel="stylesheet" href="/css/app.min.{{= this.pkgVer}}.css">
   {{?}}
-
 
   <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 

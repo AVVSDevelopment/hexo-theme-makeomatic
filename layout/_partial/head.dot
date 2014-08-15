@@ -61,6 +61,7 @@
 
   {{? it.page.url }}
   <meta property="og:url" content="{{! it.page.url }}" />
+  <link rel="alternate" hreflang="x-default" href="{{! it.page.url }}" />
   {{?}}
 
   {{? it.page.cover }}

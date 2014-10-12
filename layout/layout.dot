@@ -13,6 +13,14 @@
     <h1 class='outlined-caption text-center'>
         <a href='/blog'>{{= it.config.title }}</a>
     </h1>
+
+    <!-- Place this where you want the widget to appear -->
+    <h2>NodeSchool Moscow. 1 ноября 2014 года.</h2>
+    <p class='lead'>Принимайте участие в NodeSchool #1 в Москве. Если вам интересна разработка на Node.JS, 
+    вы хотите развить свои навыки или просто познакомиться с местным комьюнити - то вы еще можете
+    успеть зарегистрироваться на событие.</p>
+    <tito-widget event="makeomatic/nodeschool-moscow"></tito-widget>
+
     <div class='row'>
         <div class='span10'>{{= it.body }}</div>
         <aside class="span2">{{#def.load('_partial/sidebar') }}</aside>

@@ -16,9 +16,9 @@
 
     <!-- Place this where you want the widget to appear -->
     <h2>NodeSchool Moscow. 1 ноября 2014 года.</h2>
-    <p class='lead'>Принимайте участие в NodeSchool #1 в Москве. Если вам интересна разработка на Node.JS, 
+    <p class='lead'>Принимайте участие в NodeSchool #1 в Москве. Если вам интересна разработка на Node.JS,
     вы хотите развить свои навыки или просто познакомиться с местным комьюнити - то вы еще можете
-    успеть зарегистрироваться на событие.</p>
+    успеть <a href="https://ti.to/makeomatic/nodeschool-moscow">зарегистрироваться</a> на событие.</p>
     <tito-widget event="makeomatic/nodeschool-moscow"></tito-widget>
 
     <div class='row'>
